@@ -315,7 +315,12 @@
 
                 <!-- Products -->
                 <div id="admin-products" class="admin-section bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-                    <button class="bg-primary text-white px-5 py-2.5 rounded font-bold mb-8 hover:bg-primary-dark transition text-sm tracking-wide shadow-sm" onclick="openProductForm()">+ Add Product</button>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <button class="bg-primary text-white px-5 py-2.5 rounded font-bold hover:bg-primary-dark transition text-sm tracking-wide shadow-sm" onclick="openProductForm()">+ Add Product</button>
+                        <button class="bg-gray-200 text-gray-800 px-5 py-2.5 rounded font-bold hover:bg-gray-300 transition text-sm tracking-wide shadow-sm" onclick="exportCatalogue()"><i class="fas fa-file-export mr-2"></i> Export Catalogue</button>
+                        <button class="bg-gray-200 text-gray-800 px-5 py-2.5 rounded font-bold hover:bg-gray-300 transition text-sm tracking-wide shadow-sm" onclick="document.getElementById('import-file').click()"><i class="fas fa-file-import mr-2"></i> Import Catalogue</button>
+                        <input type="file" id="import-file" class="hidden" accept=".json" onchange="importCatalogue(event)">
+                    </div>
                     <div class="overflow-x-auto">
                         <table class="w-full text-left border-collapse">
                             <thead>
